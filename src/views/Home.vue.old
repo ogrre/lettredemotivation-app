@@ -1,0 +1,413 @@
+<template>
+  <div class="home">
+    <!-- Navigation -->
+    <header>
+      <div class="header-content">
+        <a href="/" class="logo">
+          📝 {{ t('hero.title') }}
+        </a>
+        <div class="header-actions">
+          <a href="https://github.com/yourusername/lettredemotivation-ext" target="_blank" rel="noopener noreferrer" class="github-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <select class="lang-dropdown" v-model="locale">
+            <option value="en">🇺🇸 EN</option>
+            <option value="fr">🇫🇷 FR</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>{{ t('hero.title') }}</h1>
+        <p class="subtitle">{{ t('hero.subtitle') }}</p>
+        <p class="subtitle" style="font-size: 16px; color: #6b7280; margin-bottom: 40px;">
+          {{ t('hero.description') }}
+        </p>
+        <div class="cta-buttons">
+          <a href="https://chrome.google.com/webstore" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 190.5 190.5" preserveAspectRatio="xMidYMid" style="flex-shrink: 0;">
+              <path fill="#fff" d="M95.252 142.873c26.304 0 47.627-21.324 47.627-47.628s-21.323-47.628-47.627-47.628-47.627 21.324-47.627 47.628 21.323 47.628 47.627 47.628z" />
+              <path fill="#229342" d="m54.005 119.07-41.24-71.43a95.227 95.227 0 0 0-.003 95.25 95.234 95.234 0 0 0 82.496 47.61l41.24-71.43v-.011a47.613 47.613 0 0 1-17.428 17.443 47.62 47.62 0 0 1-47.632.007 47.62 47.62 0 0 1-17.433-17.437z" />
+              <path fill="#fbc116" d="m136.495 119.067-41.239 71.43a95.229 95.229 0 0 0 82.489-47.622A95.24 95.24 0 0 0 190.5 95.248a95.237 95.237 0 0 0-12.772-47.623H95.249l-.01.007a47.62 47.62 0 0 1 23.819 6.372 47.618 47.618 0 0 1 17.439 17.431 47.62 47.62 0 0 1-.001 47.633z" />
+              <path fill="#1a73e8" d="M95.252 132.961c20.824 0 37.705-16.881 37.705-37.706S116.076 57.55 95.252 57.55 57.547 74.431 57.547 95.255s16.881 37.706 37.705 37.706z" />
+              <path fill="#e33b2e" d="M95.252 47.628h82.479A95.237 95.237 0 0 0 142.87 12.76 95.23 95.23 0 0 0 95.245 0a95.222 95.222 0 0 0-47.623 12.767 95.23 95.23 0 0 0-34.856 34.872l41.24 71.43.011.006a47.62 47.62 0 0 1-.015-47.633 47.61 47.61 0 0 1 41.252-23.815z" />
+            </svg>
+            <span>{{ locale === 'fr' ? 'Installer sur Chrome' : 'Install on Chrome' }}</span>
+          </a>
+          <a href="https://addons.mozilla.org/firefox/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 77.42 79.97" preserveAspectRatio="xMidYMid" style="flex-shrink: 0;">
+              <defs>
+                <linearGradient id="ffGrad1Hero" x1="70.79%" y1="12.39%" x2="41.42%" y2="75.82%">
+                  <stop offset="0%" stop-color="#FFF44F" />
+                  <stop offset="60%" stop-color="#FF980E" />
+                  <stop offset="100%" stop-color="#FF3647" />
+                </linearGradient>
+                <linearGradient id="ffGrad2Hero" x1="67.03%" y1="17.37%" x2="29.67%" y2="80.87%">
+                  <stop offset="0%" stop-color="#FFF44F" />
+                  <stop offset="100%" stop-color="#FF980E" />
+                </linearGradient>
+                <linearGradient id="ffGrad3Hero" x1="48.87%" y1="23.34%" x2="39.27%" y2="98.58%">
+                  <stop offset="0%" stop-color="#FFF44F" />
+                  <stop offset="100%" stop-color="#FF980E" />
+                </linearGradient>
+                <radialGradient id="ffGrad4Hero" cx="49.88%" cy="40.97%" r="128.8%">
+                  <stop offset="0%" stop-color="#FFBD4F" />
+                  <stop offset="100%" stop-color="#FF980E" />
+                </radialGradient>
+                <radialGradient id="ffGrad5Hero" cx="48.6%" cy="98.41%" r="90.72%">
+                  <stop offset="0%" stop-color="#960E18" />
+                  <stop offset="100%" stop-color="#B11927" stop-opacity="0" />
+                </radialGradient>
+                <radialGradient id="ffGrad6Hero" cx="49.17%" cy="28.81%" r="87.85%">
+                  <stop offset="0%" stop-color="#FFF44F" />
+                  <stop offset="100%" stop-color="#FF980E" />
+                </radialGradient>
+              </defs>
+              <path fill="url(#ffGrad1Hero)" d="M35.88,13.99c-7.5-7.5-20.9-8.4-28.2-1.2C.58,19.89-.02,30.39,0,36.29c-.7-3.7.3-7.8,2.7-10.2C8.88,19.89,28.68,12.39,35.88,13.99Z"/>
+              <path fill="url(#ffGrad2Hero)" d="M74.12,26.79c-1.6-4.9-5-9.8-7.7-11.4c.9,2.4,1.4,5.1,1.6,7.7-3.9-10.7-11.6-15.2-17.6-23.1c-.3-.3-.6-.7-.8-1c-.1-.1-.2-.3-.3-.4c-.1-.2-.2-.4-.3-.6c-.1-.3-.2-.5-.3-.8c-.1-.1-.1-.2-.1-.3-2.1,1.1-8.7,7.2-10,15.4c-4.9,1.1-8.8,3.4-11.4,6.6c-.3-.3-.7-.6-1-.9c.3-3.7.2-11.6-1-13.8c-.5.3-.9.6-1.3.9-2.3,1.8-4.4,4-6.2,6.5c-1.2,1.6-2.2,3.4-3,5.3-.1.2-.2.5-.3.7c-1,2.5-1.6,5.2-1.9,8c-.1.7-.1,1.5-.2,2.3c-.1,1.2-.1,2.4-.1,3.6c0,1.2,0,2.4.1,3.7c0,.2,0,.3,0,.5c0,1,.1,1.9.2,2.9c0,.3,0,.7.1,1c0,.3.1.7.1,1c.1.7.2,1.5.3,2.2c.1.5.2,1,.3,1.5c.1.5.2.9.3,1.4c.2.8.4,1.7.6,2.5c.2.7.4,1.4.6,2.1c.3,1.1.7,2.2,1.1,3.3c.2.6.5,1.2.7,1.8c.3.7.5,1.4.8,2.1c.5,1.2,1.1,2.4,1.7,3.6c.3.6.6,1.2.9,1.8c.3.6.7,1.3,1,1.9c.7,1.2,1.4,2.4,2.2,3.5c.4.6.8,1.1,1.2,1.7c.4.5.8,1.1,1.2,1.6c.8,1.1,1.7,2.1,2.6,3.1c.4.5.9.9,1.3,1.4c.5.5,1,.9,1.5,1.4c1,1,2.1,1.9,3.2,2.8c.6.5,1.2,1,1.8,1.4c.6.5,1.2.9,1.8,1.4c1.2.9,2.5,1.8,3.8,2.6c.7.4,1.4.8,2.1,1.2c.7.4,1.4.8,2.1,1.2c1.4.7,2.8,1.4,4.3,2c.8.3,1.5.6,2.3.9c.8.3,1.5.5,2.3.8c1.5.5,3.1.9,4.7,1.3c.8.2,1.6.4,2.4.5c.8.2,1.6.3,2.5.4c1.7.3,3.4.5,5.1.6c.9.1,1.7.1,2.6.1c.9,0,1.7.1,2.6,0c3.5,0,7.1-.4,10.5-1.2c.8-.2,1.7-.4,2.5-.6c.8-.2,1.7-.5,2.5-.7c1.7-.5,3.3-1.1,4.9-1.8c.8-.3,1.6-.7,2.4-1.1c.8-.4,1.6-.8,2.3-1.2c1.5-.8,3-1.7,4.5-2.6c.7-.5,1.5-1,2.2-1.5c.7-.5,1.4-1,2.1-1.6c1.4-1.1,2.8-2.3,4.1-3.5c.7-.6,1.3-1.2,2-1.9c.6-.6,1.3-1.3,1.9-2c1.2-1.3,2.4-2.7,3.5-4.1c.6-.7,1.1-1.4,1.6-2.1c.5-.7,1-1.5,1.5-2.2c.9-1.5,1.8-3,2.6-4.5c.4-.8.8-1.6,1.2-2.3c.4-.8.7-1.6,1.1-2.4c.7-1.6,1.3-3.2,1.8-4.9c.3-.8.5-1.7.7-2.5c.2-.8.4-1.7.6-2.5c.4-1.7.7-3.4.9-5.1c.1-.9.2-1.7.3-2.6c.1-.9.1-1.7.1-2.6c0-3.5-.3-7-.9-10.4c-.1-.5-.2-1.1-.3-1.6c-.1-.5-.2-1.1-.4-1.6c-.3-1.1-.6-2.1-1-3.2c0-.2-.1-.3-.1-.5C75.62,30.79,74.92,28.79,74.12,26.79Z"/>
+              <path fill="url(#ffGrad3Hero)" d="M74.12,26.79c-1.6-4.9-5-9.8-7.7-11.4c.9,2.4,1.4,5.1,1.6,7.7-3.9-10.7-11.6-15.2-17.6-23.1c-.3-.3-.6-.7-.8-1c-.1-.1-.2-.3-.3-.4c-.1-.2-.2-.4-.3-.6c-.1-.3-.2-.5-.3-.8c-.1-.1-.1-.2-.1-.3-2.1,1.1-8.7,7.2-10,15.4c-4.9,1.1-8.8,3.4-11.4,6.6c-.3-.3-.7-.6-1-.9c.3-3.7.2-11.6-1-13.8c-.5.3-.9.6-1.3.9-2.3,1.8-4.4,4-6.2,6.5c-1.2,1.6-2.2,3.4-3,5.3c0,0,23.1,12.9,24.5,29.9c0,0,4.7-13.6,15.8-14.6c0,0,1.1,7.5-5.3,15.6c0,0,11.5-.2,17.9-7.2C70.12,33.09,74.12,26.79,74.12,26.79Z"/>
+              <path fill="url(#ffGrad4Hero)" d="M45.58,40.89c-1.4-17-24.5-29.9-24.5-29.9c-.1.2-.2.5-.3.7c-1,2.5-1.6,5.2-1.9,8c-.1.7-.1,1.5-.2,2.3c0,0,8.6,5.2,11.5,14.5c0,0-3.9-1.1-10.6-1.5c-.1,1.2-.1,2.4-.1,3.6c0,1.2,0,2.4.1,3.7c0,0,6.8,1.2,11.9,5.7c0,0-5.2.3-11.8,2.9c0,.2,0,.3,0,.5c0,1,.1,1.9.2,2.9c0,0,5.7-.9,11.6,1.5c0,0-5.6,1.4-11.5,4.6c0,.3,0,.7.1,1c0,.3.1.7.1,1c.1.7.2,1.5.3,2.2c0,0,5.2-2.2,11.8-1.7c0,0-5.7,2.2-11.3,6c.1.5.2,1,.3,1.5c.1.5.2.9.3,1.4c.2.8.4,1.7.6,2.5c0,0,5.8-3.7,12-3.3c0,0-5.4,3-10.6,7.2c.2.7.4,1.4.6,2.1c.3,1.1.7,2.2,1.1,3.3c0,0,5.9-4.4,11.3-4.7c0,0-4.8,3.5-9.6,8c.2.6.5,1.2.7,1.8c.3.7.5,1.4.8,2.1c.5,1.2,1.1,2.4,1.7,3.6c0,0,5.5-5.3,10.8-6.1c0,0-4.3,4.2-8.9,9.1c.3.6.6,1.2.9,1.8c.3.6.7,1.3,1,1.9c.7,1.2,1.4,2.4,2.2,3.5c0,0,5.4-5.7,10.3-7c0,0-4.1,4.6-8.2,9.9c.4.6.8,1.1,1.2,1.7c.4.5.8,1.1,1.2,1.6c.8,1.1,1.7,2.1,2.6,3.1c0,0,5.1-6.2,9.8-7.8c0,0-3.7,5.1-7.5,10.7c.4.5.9.9,1.3,1.4c.5.5,1,.9,1.5,1.4c1,1,2.1,1.9,3.2,2.8c0,0,4.9-6.6,9.3-8.5c0,0-3.4,5.5-6.9,11.3c.6.5,1.2,1,1.8,1.4c.6.5,1.2.9,1.8,1.4c1.2.9,2.5,1.8,3.8,2.6c0,0,4.6-6.9,8.8-9.1c0,0-3.1,5.9-6.3,12c.7.4,1.4.8,2.1,1.2c.7.4,1.4.8,2.1,1.2c1.4.7,2.8,1.4,4.3,2c0,0,4.3-7.3,8.3-9.8c0,0-2.8,6.3-5.6,12.5c.8.3,1.5.6,2.3.9c.8.3,1.5.5,2.3.8c1.5.5,3.1.9,4.7,1.3c0,0,3.9-7.6,7.7-10.4c0,0-2.4,6.6-4.9,13.1c.8.2,1.6.4,2.4.5c.8.2,1.6.3,2.5.4c1.7.3,3.4.5,5.1.6c0,0,3.6-7.8,7.2-10.9c0,0-2.1,6.9-4.2,13.6c.9.1,1.7.1,2.6.1c.9,0,1.7.1,2.6,0c3.5,0,7.1-.4,10.5-1.2c0,0,3.2-8.1,6.6-11.5c0,0-1.7,7.2-3.5,14.1c.8-.2,1.7-.4,2.5-.6c.8-.2,1.7-.5,2.5-.7c1.7-.5,3.3-1.1,4.9-1.8c0,0,2.9-8.3,6.1-12c0,0-1.4,7.4-2.8,14.5c.8-.3,1.6-.7,2.4-1.1c.8-.4,1.6-.8,2.3-1.2c1.5-.8,3-1.7,4.5-2.6c0,0,2.6-8.5,5.5-12.5c0,0-1.1,7.6-2.1,14.9c.7-.5,1.5-1,2.2-1.5c.7-.5,1.4-1,2.1-1.6c1.4-1.1,2.8-2.3,4.1-3.5c0,0,2.2-8.7,5-13c0,0-.7,7.9-1.5,15.3c.7-.6,1.3-1.2,2-1.9c.6-.6,1.3-1.3,1.9-2c1.2-1.3,2.4-2.7,3.5-4.1c0,0,1.8-8.8,4.4-13.4c0,0-.4,8-.8,15.6c.6-.7,1.1-1.4,1.6-2.1c.5-.7,1-1.5,1.5-2.2c.9-1.5,1.8-3,2.6-4.5c0,0,1.5-9,3.9-13.9c0,0,0,8.2-.1,16c.4-.8.8-1.6,1.2-2.3c.4-.8.7-1.6,1.1-2.4c.7-1.6,1.3-3.2,1.8-4.9c0,0,1.1-9.1,3.3-14.3c0,0,.4,8.3.6,16.3c.3-.8.5-1.7.7-2.5c.2-.8.4-1.7.6-2.5c.4-1.7.7-3.4.9-5.1c0,0,.8-9.2,2.8-14.7c0,0,.8,8.5,1.4,16.7c.1-.9.2-1.7.3-2.6c.1-.9.1-1.7.1-2.6c0-3.5-.3-7-.9-10.4c0,0,.4-9.3,2.2-15.1c0,0,1.2,8.6,2.3,17c-.1-.5-.2-1.1-.3-1.6c-.1-.5-.2-1.1-.4-1.6c-.3-1.1-.6-2.1-1-3.2c0-.2-.1-.3-.1-.5C75.62,30.79,74.92,28.79,74.12,26.79Z"/>
+              <path fill="url(#ffGrad5Hero)" d="M38.58,79.89c5.2,0,9.5-4.3,9.5-9.5s-4.3-9.5-9.5-9.5s-9.5,4.3-9.5,9.5S33.38,79.89,38.58,79.89Z"/>
+              <path fill="url(#ffGrad6Hero)" d="M74.12,26.79c-1.6-4.9-5-9.8-7.7-11.4c.9,2.4,1.4,5.1,1.6,7.7-3.9-10.7-11.6-15.2-17.6-23.1c-.3-.3-.6-.7-.8-1c0,0,0,0,0,0c9.6,10.5,10.8,21.9,10.8,21.9c.4,2.7.3,5.4-.2,8c0,0,8.4-2.5,13-9.7c0,0-.8,4.4-4.5,8.5c0,0,8.9-.9,13.9-7.5C84.92,14.59,74.12,26.79,74.12,26.79Z"/>
+            </svg>
+            <span>{{ locale === 'fr' ? 'Installer sur Firefox' : 'Install on Firefox' }}</span>
+          </a>
+          <a href="https://github.com/yourusername/lettredemotivation-ext" class="btn btn-tertiary" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <span>Open Source</span>
+          </a>
+        </div>
+        <p class="hero-note">
+          {{ locale === 'fr'
+            ? 'Chromium, Edge et Brave utilisent le Chrome Web Store'
+            : 'Chromium, Edge and Brave use the Chrome Web Store'
+          }}
+        </p>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <h2>{{ t('features.title') }}</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>{{ t('features.ai.title') }}</h3>
+            <p>{{ t('features.ai.description') }}</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3>{{ t('features.onsite.title') }}</h3>
+            <p>{{ t('features.onsite.description') }}</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>{{ t('features.privacy.title') }}</h3>
+            <p>{{ t('features.privacy.description') }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2>{{ t('howto.title') }}</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>{{ t('howto.step1.title') }}</h3>
+              <p>{{ t('howto.step1.description') }}</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>{{ t('howto.step2.title') }}</h3>
+              <p>{{ t('howto.step2.description') }}</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>{{ t('howto.step3.title') }}</h3>
+              <p>{{ t('howto.step3.description') }}</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>{{ t('howto.step4.title') }}</h3>
+              <p>{{ t('howto.step4.description') }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="privacy">
+      <div class="container">
+        <h2>{{ t('footer.privacy') }}</h2>
+        <p class="subtitle">
+          {{ locale === 'fr'
+            ? 'Aucune donnée personnelle n\'est collectée ou stockée sur nos serveurs. Tout reste local sur votre navigateur.'
+            : 'No personal data is collected or stored on our servers. Everything stays local in your browser.'
+          }}
+        </p>
+        <div class="privacy-features">
+          <div class="privacy-item">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>{{ locale === 'fr' ? 'Données locales' : 'Local storage' }}</span>
+          </div>
+          <div class="privacy-item">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+              <line x1="3" y1="3" x2="21" y2="21" stroke-width="2"/>
+            </svg>
+            <span>{{ locale === 'fr' ? 'Pas de tracking' : 'No tracking' }}</span>
+          </div>
+          <div class="privacy-item">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            <span>{{ locale === 'fr' ? 'Open source' : 'Open source' }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <div class="container">
+        <h2>{{ t('faq.title') }}</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q1.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q1.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q2.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q2.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q3.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q3.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q4.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q4.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q5.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q5.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q6.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q6.answer') }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <div class="footer-links">
+              <router-link to="/privacy">{{ t('footer.privacy') }}</router-link>
+              <router-link to="/terms">{{ t('footer.terms') }}</router-link>
+            </div>
+          </div>
+          <div class="footer-right">
+            <p class="footer-text">
+              © {{ new Date().getFullYear() }} <a href="https://lettredemotivation.app" target="_blank">lettredemotivation.app</a> - {{ t('footer.rights') }}
+            </p>
+            <p class="footer-credits">
+              {{ t('footer.developedBy') }} <a href="https://betta.black" target="_blank">Black Betta</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</template>
+
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
+</script>
+
+<style scoped>
+.home {
+  min-height: 100vh;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.github-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #9ca3af;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.github-btn:hover {
+  background: #1a1a1a;
+  color: #e5e7eb;
+  border-color: #3a3a3a;
+}
+
+.lang-dropdown {
+  padding: 8px 12px;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.lang-dropdown:hover {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
+}
+
+.lang-dropdown:focus {
+  border-color: #3a3a3a;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  border: 1px solid;
+}
+
+.btn svg {
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background: #1a1a1a;
+  color: white;
+  border-color: #2a2a2a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background: #232323;
+  border-color: #3a3a3a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary {
+  background: #1a1a1a;
+  color: #e5e7eb;
+  border-color: #2a2a2a;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary:hover {
+  background: #232323;
+  border-color: #3a3a3a;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.btn-tertiary {
+  background: transparent;
+  color: #9ca3af;
+  border-color: #2a2a2a;
+}
+
+.btn-tertiary:hover {
+  background: #1a1a1a;
+  color: #e5e7eb;
+  border-color: #3a3a3a;
+}
+
+.hero-note {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #6b7280;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+</style>

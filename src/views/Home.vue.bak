@@ -1,0 +1,488 @@
+<template>
+  <div class="home">
+    <!-- Navigation -->
+    <header>
+      <div class="header-content">
+        <a href="/" class="logo">
+          📝 {{ t('hero.title') }}
+        </a>
+        <div class="header-actions">
+          <a href="https://github.com/yourusername/lettredemotivation-ext" target="_blank" rel="noopener noreferrer" class="github-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <select class="lang-dropdown" v-model="locale">
+            <option value="en">🇺🇸 EN</option>
+            <option value="fr">🇫🇷 FR</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>{{ t('hero.title') }}</h1>
+        <p class="subtitle">{{ t('hero.subtitle') }}</p>
+        <p class="subtitle" style="font-size: 16px; color: #6b7280; margin-bottom: 40px;">
+          {{ t('hero.description') }}
+        </p>
+        <div class="cta-buttons">
+          <select class="browser-dropdown" v-model="selectedBrowser" @change="handleBrowserChange">
+            <option value="chrome">
+              Chrome
+            </option>
+            <option value="chromium">
+              Chromium
+            </option>
+            <option value="firefox">
+              Firefox
+            </option>
+            <option value="edge">
+              Edge
+            </option>
+          </select>
+        </div>
+        <div class="browser-badges">
+          <span class="available-text">{{ t('hero.availableFor') }}</span>
+          <div class="badges-container">
+            <div class="browser-badge">
+              <svg width="20" height="20" viewBox="0 0 190.5 190.5" preserveAspectRatio="xMidYMid" style="flex-shrink: 0;">
+                <path fill="#fff" d="M95.252 142.873c26.304 0 47.627-21.324 47.627-47.628s-21.323-47.628-47.627-47.628-47.627 21.324-47.627 47.628 21.323 47.628 47.627 47.628z" />
+                <path fill="#229342" d="m54.005 119.07-41.24-71.43a95.227 95.227 0 0 0-.003 95.25 95.234 95.234 0 0 0 82.496 47.61l41.24-71.43v-.011a47.613 47.613 0 0 1-17.428 17.443 47.62 47.62 0 0 1-47.632.007 47.62 47.62 0 0 1-17.433-17.437z" />
+                <path fill="#fbc116" d="m136.495 119.067-41.239 71.43a95.229 95.229 0 0 0 82.489-47.622A95.24 95.24 0 0 0 190.5 95.248a95.237 95.237 0 0 0-12.772-47.623H95.249l-.01.007a47.62 47.62 0 0 1 23.819 6.372 47.618 47.618 0 0 1 17.439 17.431 47.62 47.62 0 0 1-.001 47.633z" />
+                <path fill="#1a73e8" d="M95.252 132.961c20.824 0 37.705-16.881 37.705-37.706S116.076 57.55 95.252 57.55 57.547 74.431 57.547 95.255s16.881 37.706 37.705 37.706z" />
+                <path fill="#e33b2e" d="M95.252 47.628h82.479A95.237 95.237 0 0 0 142.87 12.76 95.23 95.23 0 0 0 95.245 0a95.222 95.222 0 0 0-47.623 12.767 95.23 95.23 0 0 0-34.856 34.872l41.24 71.43.011.006a47.62 47.62 0 0 1-.015-47.633 47.61 47.61 0 0 1 41.252-23.815z" />
+              </svg>
+              <span>Chrome</span>
+            </div>
+            <div class="browser-badge">
+              <svg width="20" height="20" viewBox="0 0 190.5 190.5" preserveAspectRatio="xMidYMid" style="flex-shrink: 0;">
+                <path fill="#fff" d="M95.252 142.873c26.304 0 47.627-21.324 47.627-47.628s-21.323-47.628-47.627-47.628-47.627 21.324-47.627 47.628 21.323 47.628 47.627 47.628z" />
+                <path fill="#229342" d="m54.005 119.07-41.24-71.43a95.227 95.227 0 0 0-.003 95.25 95.234 95.234 0 0 0 82.496 47.61l41.24-71.43v-.011a47.613 47.613 0 0 1-17.428 17.443 47.62 47.62 0 0 1-47.632.007 47.62 47.62 0 0 1-17.433-17.437z" />
+                <path fill="#fbc116" d="m136.495 119.067-41.239 71.43a95.229 95.229 0 0 0 82.489-47.622A95.24 95.24 0 0 0 190.5 95.248a95.237 95.237 0 0 0-12.772-47.623H95.249l-.01.007a47.62 47.62 0 0 1 23.819 6.372 47.618 47.618 0 0 1 17.439 17.431 47.62 47.62 0 0 1-.001 47.633z" />
+                <path fill="#1a73e8" d="M95.252 132.961c20.824 0 37.705-16.881 37.705-37.706S116.076 57.55 95.252 57.55 57.547 74.431 57.547 95.255s16.881 37.706 37.705 37.706z" />
+                <path fill="#e33b2e" d="M95.252 47.628h82.479A95.237 95.237 0 0 0 142.87 12.76 95.23 95.23 0 0 0 95.245 0a95.222 95.222 0 0 0-47.623 12.767 95.23 95.23 0 0 0-34.856 34.872l41.24 71.43.011.006a47.62 47.62 0 0 1-.015-47.633 47.61 47.61 0 0 1 41.252-23.815z" />
+              </svg>
+              <span>Chromium</span>
+            </div>
+            <div class="browser-badge">
+              <svg width="20" height="20" viewBox="0 0 256 265" preserveAspectRatio="xMidYMid" style="flex-shrink: 0;">
+                <defs>
+                  <linearGradient id="ffGrad1Badge" x1="50%" y1="1.849%" x2="50%" y2="100%">
+                    <stop offset="0%" stop-color="#FFF44F" />
+                    <stop offset="100%" stop-color="#FF980E" />
+                  </linearGradient>
+                </defs>
+                <path fill="url(#ffGrad1Badge)" d="M248.033 88.713c-5.569-13.399-16.864-27.866-25.71-32.439a133.169 133.169 0 0 1 12.979 38.9l.023.215c-14.49-36.126-39.062-50.692-59.13-82.41a155.1 155.1 0 0 1-3.019-4.907 40.605 40.605 0 0 1-1.412-2.645 23.31 23.31 0 0 1-1.912-5.076.331.331 0 0 0-.291-.331.469.469 0 0 0-.241 0c-.016 0-.043.03-.063.037-.02.006-.063.036-.092.049l.049-.086c-32.19 18.849-43.113 53.741-44.118 71.194a64.108 64.108 0 0 0-35.269 13.593 38.336 38.336 0 0 0-3.307-2.506 59.417 59.417 0 0 1-.36-31.324 94.912 94.912 0 0 0-30.848 23.841h-.06c-5.079-6.438-4.722-27.667-4.431-32.102a22.957 22.957 0 0 0-4.279 2.272 93.435 93.435 0 0 0-12.526 10.73 111.954 111.954 0 0 0-11.98 14.375v.019-.023A108.26 108.26 0 0 0 4.841 108.92l-.171.846a203.818 203.818 0 0 0-1.26 8.003c0 .096-.02.185-.03.281a122.12 122.12 0 0 0-2.08 17.667v.662c.086 98.661 106.944 160.23 192.344 110.825a128.165 128.165 0 0 0 62.12-89.153c.215-1.653.39-3.29.582-4.96a131.8 131.8 0 0 0-8.313-64.378 Z" />
+              </svg>
+              <span>Firefox</span>
+            </div>
+            <div class="browser-badge">
+              <svg width="20" height="20" viewBox="0 0 256 256" style="flex-shrink: 0;">
+                <defs>
+                  <linearGradient id="edgeGrad1Badge" x1="50%" y1="0%" x2="50%" y2="100%">
+                    <stop offset="0%" stop-color="#0C59A4" />
+                    <stop offset="100%" stop-color="#114A8B" />
+                  </linearGradient>
+                </defs>
+                <path fill="url(#edgeGrad1Badge)" d="M235.7 195.5a93.7 93.7 0 0 1-10.6 4.7 101.9 101.9 0 0 1-35.9 6.4c-47.3 0-88.5-32.5-88.5-74.3a31.5 31.5 0 0 1 16.4-27.3c-42.8 1.8-53.8 46.4-53.8 72.5 0 74 68.1 81.4 82.8 81.4 7.9 0 19.8-2.3 27-4.6l1.3-.4a128.3 128.3 0 0 0 66.6-52.8 4 4 0 0 0-5.3-5.6 Z" transform="translate(-4.6 -5)" />
+              </svg>
+              <span>Edge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <h2>{{ t('features.title') }}</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>{{ t('features.ai.title') }}</h3>
+            <p>{{ t('features.ai.description') }}</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3>{{ t('features.onsite.title') }}</h3>
+            <p>{{ t('features.onsite.description') }}</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>{{ t('features.privacy.title') }}</h3>
+            <p>{{ t('features.privacy.description') }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2>{{ t('howto.title') }}</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>{{ t('howto.step1.title') }}</h3>
+              <p>{{ t('howto.step1.description') }}</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>{{ t('howto.step2.title') }}</h3>
+              <p>{{ t('howto.step2.description') }}</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>{{ t('howto.step3.title') }}</h3>
+              <p>{{ t('howto.step3.description') }}</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>{{ t('howto.step4.title') }}</h3>
+              <p>{{ t('howto.step4.description') }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="privacy">
+      <div class="container">
+        <h2>{{ t('footer.privacy') }}</h2>
+        <p class="subtitle">
+          {{ locale === 'fr'
+            ? 'Aucune donnée personnelle n\'est collectée ou stockée sur nos serveurs. Tout reste local sur votre navigateur.'
+            : 'No personal data is collected or stored on our servers. Everything stays local in your browser.'
+          }}
+        </p>
+        <div class="privacy-features">
+          <div class="privacy-item">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>{{ locale === 'fr' ? 'Données locales' : 'Local storage' }}</span>
+          </div>
+          <div class="privacy-item">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+              <line x1="3" y1="3" x2="21" y2="21" stroke-width="2"/>
+            </svg>
+            <span>{{ locale === 'fr' ? 'Pas de tracking' : 'No tracking' }}</span>
+          </div>
+          <div class="privacy-item">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            <span>{{ locale === 'fr' ? 'Open source' : 'Open source' }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <div class="container">
+        <h2>{{ t('faq.title') }}</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q1.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q1.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q2.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q2.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q3.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q3.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q4.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q4.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q5.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q5.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q6.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q6.answer') }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <div class="footer-links">
+              <router-link to="/privacy">{{ t('footer.privacy') }}</router-link>
+              <router-link to="/terms">{{ t('footer.terms') }}</router-link>
+            </div>
+          </div>
+          <div class="footer-right">
+            <p class="footer-text">
+              © {{ new Date().getFullYear() }} <a href="https://lettredemotivation.app" target="_blank">lettredemotivation.app</a> - {{ t('footer.rights') }}
+            </p>
+            <p class="footer-credits">
+              {{ t('footer.developedBy') }} <a href="https://betta.black" target="_blank">Black Betta</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</template>
+
+<script setup>
+import { useI18n } from 'vue-i18n'
+import { ref } from 'vue'
+
+const { t, locale } = useI18n()
+
+// Browser selection
+const selectedBrowser = ref('chrome')
+
+// Handle browser change
+const handleBrowserChange = () => {
+  const links = {
+    chrome: 'https://chrome.google.com/webstore',
+    chromium: 'https://chrome.google.com/webstore',
+    firefox: 'https://addons.mozilla.org/firefox/',
+    edge: 'https://microsoftedge.microsoft.com/addons'
+  }
+  window.open(links[selectedBrowser.value], '_blank')
+}
+
+
+// Browser-specific install links
+const installLink = computed(() => {
+  const links = {
+    chrome: 'https://chrome.google.com/webstore',
+    firefox: 'https://addons.mozilla.org/firefox/',
+    edge: 'https://microsoftedge.microsoft.com/addons'
+  }
+  return links[browser]
+})
+
+// Browser-specific install text
+const installText = computed(() => {
+  const texts = {
+    en: {
+      chrome: 'Add to Chrome',
+      firefox: 'Add to Firefox',
+      edge: 'Add to Edge'
+    },
+    fr: {
+      chrome: 'Ajouter à Chrome',
+      firefox: 'Ajouter à Firefox',
+      edge: 'Ajouter à Edge'
+    }
+  }
+  return texts[locale.value][browser]
+})
+
+// Browser icon component
+const browserIcon = computed(() => {
+  const icons = {
+    chrome: () => h('svg', { width: 20, height: 20, viewBox: '0 0 190.5 190.5', preserveAspectRatio: 'xMidYMid' }, [
+      h('path', { fill: '#fff', d: 'M95.252 142.873c26.304 0 47.627-21.324 47.627-47.628s-21.323-47.628-47.627-47.628-47.627 21.324-47.627 47.628 21.323 47.628 47.627 47.628z' }),
+      h('path', { fill: '#229342', d: 'm54.005 119.07-41.24-71.43a95.227 95.227 0 0 0-.003 95.25 95.234 95.234 0 0 0 82.496 47.61l41.24-71.43v-.011a47.613 47.613 0 0 1-17.428 17.443 47.62 47.62 0 0 1-47.632.007 47.62 47.62 0 0 1-17.433-17.437z' }),
+      h('path', { fill: '#fbc116', d: 'm136.495 119.067-41.239 71.43a95.229 95.229 0 0 0 82.489-47.622A95.24 95.24 0 0 0 190.5 95.248a95.237 95.237 0 0 0-12.772-47.623H95.249l-.01.007a47.62 47.62 0 0 1 23.819 6.372 47.618 47.618 0 0 1 17.439 17.431 47.62 47.62 0 0 1-.001 47.633z' }),
+      h('path', { fill: '#1a73e8', d: 'M95.252 132.961c20.824 0 37.705-16.881 37.705-37.706S116.076 57.55 95.252 57.55 57.547 74.431 57.547 95.255s16.881 37.706 37.705 37.706z' }),
+      h('path', { fill: '#e33b2e', d: 'M95.252 47.628h82.479A95.237 95.237 0 0 0 142.87 12.76 95.23 95.23 0 0 0 95.245 0a95.222 95.222 0 0 0-47.623 12.767 95.23 95.23 0 0 0-34.856 34.872l41.24 71.43.011.006a47.62 47.62 0 0 1-.015-47.633 47.61 47.61 0 0 1 41.252-23.815z' })
+    ]),
+    firefox: () => h('svg', { width: 20, height: 20, viewBox: '0 0 256 265', preserveAspectRatio: 'xMidYMid' }, [
+      h('defs', {}, [
+        h('linearGradient', { id: 'ffGrad1', x1: '50%', y1: '1.849%', x2: '50%', y2: '100%' }, [
+          h('stop', { offset: '0%', 'stop-color': '#FFF44F' }),
+          h('stop', { offset: '100%', 'stop-color': '#FF980E' })
+        ]),
+        h('linearGradient', { id: 'ffGrad2', x1: '50%', y1: '13.944%', x2: '50%', y2: '100%' }, [
+          h('stop', { offset: '0%', 'stop-color': '#FFF44F' }),
+          h('stop', { offset: '100%', 'stop-color': '#FF980E' })
+        ])
+      ]),
+      h('path', { fill: 'url(#ffGrad1)', d: 'M248.033 88.713c-5.569-13.399-16.864-27.866-25.71-32.439a133.169 133.169 0 0 1 12.979 38.9l.023.215c-14.49-36.126-39.062-50.692-59.13-82.41a155.1 155.1 0 0 1-3.019-4.907 40.605 40.605 0 0 1-1.412-2.645 23.31 23.31 0 0 1-1.912-5.076.331.331 0 0 0-.291-.331.469.469 0 0 0-.241 0c-.016 0-.043.03-.063.037-.02.006-.063.036-.092.049l.049-.086c-32.19 18.849-43.113 53.741-44.118 71.194a64.108 64.108 0 0 0-35.269 13.593 38.336 38.336 0 0 0-3.307-2.506 59.417 59.417 0 0 1-.36-31.324 94.912 94.912 0 0 0-30.848 23.841h-.06c-5.079-6.438-4.722-27.667-4.431-32.102a22.957 22.957 0 0 0-4.279 2.272 93.435 93.435 0 0 0-12.526 10.73 111.954 111.954 0 0 0-11.98 14.375v.019-.023A108.26 108.26 0 0 0 4.841 108.92l-.171.846a203.818 203.818 0 0 0-1.26 8.003c0 .096-.02.185-.03.281a122.12 122.12 0 0 0-2.08 17.667v.662c.086 98.661 106.944 160.23 192.344 110.825a128.165 128.165 0 0 0 62.12-89.153c.215-1.653.39-3.29.582-4.96a131.8 131.8 0 0 0-8.313-64.378Z' })
+    ]),
+    edge: () => h('svg', { width: 20, height: 20, viewBox: '0 0 256 256' }, [
+      h('defs', {}, [
+        h('linearGradient', { id: 'edgeGrad1', x1: '50%', y1: '0%', x2: '50%', y2: '100%' }, [
+          h('stop', { offset: '0%', 'stop-color': '#0C59A4' }),
+          h('stop', { offset: '100%', 'stop-color': '#114A8B' })
+        ])
+      ]),
+      h('path', { fill: 'url(#edgeGrad1)', d: 'M235.7 195.5a93.7 93.7 0 0 1-10.6 4.7 101.9 101.9 0 0 1-35.9 6.4c-47.3 0-88.5-32.5-88.5-74.3a31.5 31.5 0 0 1 16.4-27.3c-42.8 1.8-53.8 46.4-53.8 72.5 0 74 68.1 81.4 82.8 81.4 7.9 0 19.8-2.3 27-4.6l1.3-.4a128.3 128.3 0 0 0 66.6-52.8 4 4 0 0 0-5.3-5.6Z', transform: 'translate(-4.6 -5)' })
+    ])
+  }
+  return icons[browser]
+})
+</script>
+
+<style scoped>
+.home {
+  min-height: 100vh;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.github-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #9ca3af;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.github-btn:hover {
+  background: #1a1a1a;
+  color: #e5e7eb;
+  border-color: #3a3a3a;
+}
+
+.lang-dropdown {
+  padding: 8px 12px;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.lang-dropdown:hover {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
+}
+
+.lang-dropdown:focus {
+  border-color: #3a3a3a;
+}
+
+.browser-dropdown {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  outline: none;
+  min-width: 200px;
+}
+
+.browser-dropdown:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.browser-dropdown:active {
+  transform: translateY(0);
+}
+
+.browser-badges {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.available-text {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badges-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.browser-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #9ca3af;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.browser-badge svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .badges-container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .browser-badge {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
