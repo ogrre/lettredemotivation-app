@@ -2,13 +2,18 @@
   <div class="legal-page">
     <header>
       <div class="header-content">
-        <a href="/" class="logo">
-          📝 {{ t('hero.title') }}
-        </a>
+        <a href="/" class="logo"> 📝 {{ t('hero.title') }} </a>
         <div class="header-actions">
-          <a href="https://github.com/yourusername/lettredemotivation-ext" target="_blank" rel="noopener noreferrer" class="github-btn">
+          <a
+            href="https://github.com/yourusername/lettredemotivation-ext"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-btn"
+          >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
             </svg>
           </a>
           <div class="lang-switcher">
@@ -36,51 +41,58 @@
         <h1>{{ locale === 'fr' ? 'Mentions légales' : 'Terms of Service' }}</h1>
 
         <div v-if="locale === 'fr'" class="content">
-          <p class="last-update">Dernière mise à jour : {{ new Date().toLocaleDateString('fr-FR') }}</p>
+          <p class="last-update">
+            Dernière mise à jour : {{ new Date().toLocaleDateString('fr-FR') }}
+          </p>
 
           <h2>1. Éditeur du site</h2>
           <p>
-            Le site lettredemotivation.app est édité par :<br>
-            <strong>Black Betta</strong><br>
-            Particulier<br>
-            Domicilié à Lille, France<br>
-            Email : <a href="mailto:contact@betta.black">contact@betta.black</a><br>
+            Le site lettredemotivation.app est édité par :<br />
+            <strong>Black Betta</strong><br />
+            Particulier<br />
+            Domicilié à Lille, France<br />
+            Email : <a href="mailto:contact@betta.black">contact@betta.black</a><br />
             Site web : <a href="https://betta.black" target="_blank">https://betta.black</a>
           </p>
 
           <h2>2. Directeur de publication</h2>
           <p>
-            Le directeur de la publication est Black Betta.<br>
+            Le directeur de la publication est Black Betta.<br />
             Contact : <a href="mailto:contact@betta.black">contact@betta.black</a>
           </p>
 
           <h2>3. Hébergement</h2>
           <p>
-            Le site est hébergé par :<br>
-            <strong>Vercel Inc.</strong><br>
-            440 N Barranca Ave #4133<br>
-            Covina, CA 91723<br>
-            États-Unis<br>
+            Le site est hébergé par :<br />
+            <strong>Vercel Inc.</strong><br />
+            440 N Barranca Ave #4133<br />
+            Covina, CA 91723<br />
+            États-Unis<br />
             Site web : <a href="https://vercel.com" target="_blank">https://vercel.com</a>
           </p>
 
           <h2>4. Propriété intellectuelle</h2>
           <p>
-            Le code source de l'extension Lettre de Motivation est distribué sous licence MIT et est disponible sur GitHub.
+            Le code source de l'extension Lettre de Motivation est distribué sous licence MIT et est
+            disponible sur GitHub.
           </p>
           <p>
-            Le contenu du site (textes, images, logos) est la propriété de Black Betta, sauf mention contraire. Toute reproduction, distribution ou utilisation sans autorisation préalable est interdite.
+            Le contenu du site (textes, images, logos) est la propriété de Black Betta, sauf mention
+            contraire. Toute reproduction, distribution ou utilisation sans autorisation préalable
+            est interdite.
           </p>
 
           <h2>5. Conditions d'utilisation</h2>
           <h3>5.1. Extension</h3>
           <p>
-            L'extension Lettre de Motivation est fournie gratuitement et "en l'état". Aucune garantie n'est fournie quant à son fonctionnement ou sa disponibilité.
+            L'extension Lettre de Motivation est fournie gratuitement et "en l'état". Aucune
+            garantie n'est fournie quant à son fonctionnement ou sa disponibilité.
           </p>
 
           <h3>5.2. Clé API OpenAI</h3>
           <p>
-            Pour utiliser l'extension, vous devez disposer de votre propre clé API OpenAI. Vous êtes responsable de :
+            Pour utiliser l'extension, vous devez disposer de votre propre clé API OpenAI. Vous êtes
+            responsable de :
           </p>
           <ul>
             <li>L'obtention et la gestion de votre clé API</li>
@@ -90,9 +102,7 @@
           </ul>
 
           <h3>5.3. Responsabilité</h3>
-          <p>
-            L'utilisateur est seul responsable de :
-          </p>
+          <p>L'utilisateur est seul responsable de :</p>
           <ul>
             <li>L'utilisation qu'il fait de l'extension</li>
             <li>Le contenu des lettres de motivation générées</li>
@@ -101,9 +111,7 @@
           </ul>
 
           <h2>6. Limitation de responsabilité</h2>
-          <p>
-            Black Betta ne saurait être tenu responsable de :
-          </p>
+          <p>Black Betta ne saurait être tenu responsable de :</p>
           <ul>
             <li>Tout dommage direct ou indirect résultant de l'utilisation de l'extension</li>
             <li>L'indisponibilité temporaire ou permanente de l'extension ou du site</li>
@@ -114,30 +122,36 @@
 
           <h2>7. Données personnelles</h2>
           <p>
-            Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles.
+            Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de
+            suppression de vos données personnelles.
           </p>
           <p>
-            Pour plus d'informations, consultez notre <router-link to="/privacy">Politique de confidentialité</router-link>.
+            Pour plus d'informations, consultez notre
+            <router-link to="/privacy">Politique de confidentialité</router-link>.
           </p>
 
           <h2>8. Cookies</h2>
           <p>
-            Ce site n'utilise aucun cookie. L'extension stocke vos données localement dans votre navigateur.
+            Ce site n'utilise aucun cookie. L'extension stocke vos données localement dans votre
+            navigateur.
           </p>
 
           <h2>9. Droit applicable</h2>
           <p>
-            Les présentes mentions légales sont régies par le droit français. Tout litige relatif à l'utilisation du site ou de l'extension sera soumis aux tribunaux français compétents.
+            Les présentes mentions légales sont régies par le droit français. Tout litige relatif à
+            l'utilisation du site ou de l'extension sera soumis aux tribunaux français compétents.
           </p>
 
           <h2>10. Modifications</h2>
           <p>
-            Black Betta se réserve le droit de modifier les présentes mentions légales à tout moment. Les modifications seront publiées sur cette page avec une nouvelle date de mise à jour.
+            Black Betta se réserve le droit de modifier les présentes mentions légales à tout
+            moment. Les modifications seront publiées sur cette page avec une nouvelle date de mise
+            à jour.
           </p>
 
           <h2>11. Contact</h2>
           <p>
-            Pour toute question concernant ces mentions légales, vous pouvez nous contacter à :<br>
+            Pour toute question concernant ces mentions légales, vous pouvez nous contacter à :<br />
             <a href="mailto:contact@betta.black">contact@betta.black</a>
           </p>
         </div>
@@ -147,42 +161,46 @@
 
           <h2>1. Site Publisher</h2>
           <p>
-            The lettredemotivation.app website is published by:<br>
-            <strong>Black Betta</strong><br>
-            Individual<br>
-            Domiciled in Lille, France<br>
-            Email: <a href="mailto:contact@betta.black">contact@betta.black</a><br>
+            The lettredemotivation.app website is published by:<br />
+            <strong>Black Betta</strong><br />
+            Individual<br />
+            Domiciled in Lille, France<br />
+            Email: <a href="mailto:contact@betta.black">contact@betta.black</a><br />
             Website: <a href="https://betta.black" target="_blank">https://betta.black</a>
           </p>
 
           <h2>2. Publication Director</h2>
           <p>
-            The publication director is Black Betta.<br>
+            The publication director is Black Betta.<br />
             Contact: <a href="mailto:contact@betta.black">contact@betta.black</a>
           </p>
 
           <h2>3. Hosting</h2>
           <p>
-            The site is hosted by:<br>
-            <strong>Vercel Inc.</strong><br>
-            440 N Barranca Ave #4133<br>
-            Covina, CA 91723<br>
-            United States<br>
+            The site is hosted by:<br />
+            <strong>Vercel Inc.</strong><br />
+            440 N Barranca Ave #4133<br />
+            Covina, CA 91723<br />
+            United States<br />
             Website: <a href="https://vercel.com" target="_blank">https://vercel.com</a>
           </p>
 
           <h2>4. Intellectual Property</h2>
           <p>
-            The source code of the Lettre de Motivation extension is distributed under the MIT license and is available on GitHub.
+            The source code of the Lettre de Motivation extension is distributed under the MIT
+            license and is available on GitHub.
           </p>
           <p>
-            The content of the site (texts, images, logos) is the property of Black Betta, unless otherwise stated. Any reproduction, distribution or use without prior authorization is prohibited.
+            The content of the site (texts, images, logos) is the property of Black Betta, unless
+            otherwise stated. Any reproduction, distribution or use without prior authorization is
+            prohibited.
           </p>
 
           <h2>5. Terms of Use</h2>
           <h3>5.1. Extension</h3>
           <p>
-            The Lettre de Motivation extension is provided free of charge and "as is". No warranty is provided regarding its operation or availability.
+            The Lettre de Motivation extension is provided free of charge and "as is". No warranty
+            is provided regarding its operation or availability.
           </p>
 
           <h3>5.2. OpenAI API Key</h3>
@@ -197,9 +215,7 @@
           </ul>
 
           <h3>5.3. Liability</h3>
-          <p>
-            The user is solely responsible for:
-          </p>
+          <p>The user is solely responsible for:</p>
           <ul>
             <li>Their use of the extension</li>
             <li>The content of the cover letters generated</li>
@@ -208,9 +224,7 @@
           </ul>
 
           <h2>6. Limitation of Liability</h2>
-          <p>
-            Black Betta cannot be held responsible for:
-          </p>
+          <p>Black Betta cannot be held responsible for:</p>
           <ul>
             <li>Any direct or indirect damage resulting from the use of the extension</li>
             <li>Temporary or permanent unavailability of the extension or site</li>
@@ -221,7 +235,8 @@
 
           <h2>7. Personal Data</h2>
           <p>
-            In accordance with GDPR, you have the right to access, rectify and delete your personal data.
+            In accordance with GDPR, you have the right to access, rectify and delete your personal
+            data.
           </p>
           <p>
             For more information, see our <router-link to="/privacy">Privacy Policy</router-link>.
@@ -229,22 +244,25 @@
 
           <h2>8. Cookies</h2>
           <p>
-            This site does not use any cookies. The extension stores your data locally in your browser.
+            This site does not use any cookies. The extension stores your data locally in your
+            browser.
           </p>
 
           <h2>9. Applicable Law</h2>
           <p>
-            These terms of service are governed by French law. Any dispute relating to the use of the site or extension will be submitted to the competent French courts.
+            These terms of service are governed by French law. Any dispute relating to the use of
+            the site or extension will be submitted to the competent French courts.
           </p>
 
           <h2>10. Changes</h2>
           <p>
-            Black Betta reserves the right to modify these terms of service at any time. Changes will be posted on this page with a new update date.
+            Black Betta reserves the right to modify these terms of service at any time. Changes
+            will be posted on this page with a new update date.
           </p>
 
           <h2>11. Contact</h2>
           <p>
-            For any questions regarding these terms of service, you can contact us at:<br>
+            For any questions regarding these terms of service, you can contact us at:<br />
             <a href="mailto:contact@betta.black">contact@betta.black</a>
           </p>
         </div>
@@ -256,16 +274,23 @@
         <div class="footer-content">
           <div class="footer-left">
             <div class="footer-links">
-              <router-link to="/privacy">{{ locale === 'fr' ? 'Politique de confidentialité' : 'Privacy Policy' }}</router-link>
-              <router-link to="/terms">{{ locale === 'fr' ? 'Mentions légales' : 'Terms of Service' }}</router-link>
+              <router-link to="/privacy">{{
+                locale === 'fr' ? 'Politique de confidentialité' : 'Privacy Policy'
+              }}</router-link>
+              <router-link to="/terms">{{
+                locale === 'fr' ? 'Mentions légales' : 'Terms of Service'
+              }}</router-link>
             </div>
           </div>
           <div class="footer-right">
             <p class="footer-text">
-              © {{ new Date().getFullYear() }} <a href="https://lettredemotivation.app" target="_blank">lettredemotivation.app</a> - {{ locale === 'fr' ? 'Tous droits réservés' : 'All rights reserved' }}
+              © {{ new Date().getFullYear() }}
+              <a href="https://lettredemotivation.app" target="_blank">lettredemotivation.app</a> -
+              {{ locale === 'fr' ? 'Tous droits réservés' : 'All rights reserved' }}
             </p>
             <p class="footer-credits">
-              {{ locale === 'fr' ? 'Développé par' : 'Developed by' }} <a href="https://betta.black" target="_blank">Black Betta</a>
+              {{ locale === 'fr' ? 'Développé par' : 'Developed by' }}
+              <a href="https://betta.black" target="_blank">Black Betta</a>
             </p>
           </div>
         </div>
@@ -279,7 +304,7 @@ import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
 
-const switchLanguage = (lang) => {
+const switchLanguage = lang => {
   locale.value = lang
 }
 </script>
