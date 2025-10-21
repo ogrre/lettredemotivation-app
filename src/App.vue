@@ -12,4 +12,9 @@
   background: #0a0a0a;
   color: #e5e7eb;
 }
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
 </style>

@@ -44,20 +44,14 @@
               <button
                 class="lang-menu-item"
                 :class="{ active: locale === 'en' }"
-                @mousedown="
-                  locale = 'en'
-                  showLangMenu = false
-                "
+                @mousedown="setLanguage('en')"
               >
                 🇺🇸 EN
               </button>
               <button
                 class="lang-menu-item"
                 :class="{ active: locale === 'fr' }"
-                @mousedown="
-                  locale = 'fr'
-                  showLangMenu = false
-                "
+                @mousedown="setLanguage('fr')"
               >
                 🇫🇷 FR
               </button>
@@ -487,39 +481,6 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq">
-      <div class="container">
-        <h2>{{ t('faq.title') }}</h2>
-        <div class="faq-list">
-          <div class="faq-item">
-            <div class="faq-question">{{ t('faq.q1.question') }}</div>
-            <div class="faq-answer">{{ t('faq.q1.answer') }}</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">{{ t('faq.q2.question') }}</div>
-            <div class="faq-answer">{{ t('faq.q2.answer') }}</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">{{ t('faq.q3.question') }}</div>
-            <div class="faq-answer">{{ t('faq.q3.answer') }}</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">{{ t('faq.q4.question') }}</div>
-            <div class="faq-answer">{{ t('faq.q4.answer') }}</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">{{ t('faq.q5.question') }}</div>
-            <div class="faq-answer">{{ t('faq.q5.answer') }}</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">{{ t('faq.q6.question') }}</div>
-            <div class="faq-answer">{{ t('faq.q6.answer') }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Roadmap Section -->
     <section class="roadmap">
       <div class="container">
@@ -647,6 +608,39 @@
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq">
+      <div class="container">
+        <h2>{{ t('faq.title') }}</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q1.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q1.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q2.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q2.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q3.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q3.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q4.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q4.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q5.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q5.answer') }}</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">{{ t('faq.q6.question') }}</div>
+            <div class="faq-answer">{{ t('faq.q6.answer') }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Newsletter Section -->
     <section class="newsletter">
       <div class="container">
@@ -655,8 +649,8 @@
           <p class="subtitle">
             {{
               locale === 'fr'
-                ? 'Recevez les dernières mises à jour et nouvelles fonctionnalités directement dans votre boîte mail'
-                : 'Get the latest updates and new features directly in your inbox'
+                ? 'Recevez les dernières mises à jour et nouvelles fonctionnalités'
+                : 'Get the latest updates and new features'
             }}
           </p>
           <form class="newsletter-form" @submit.prevent="subscribeNewsletter">
@@ -710,12 +704,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
 const showLangMenu = ref(false)
 const email = ref('')
+
+const setLanguage = lang => {
+  locale.value = lang
+  showLangMenu.value = false
+}
 
 const subscribeNewsletter = () => {
   // TODO: Implement newsletter subscription
@@ -726,6 +725,37 @@ const subscribeNewsletter = () => {
   )
   email.value = ''
 }
+
+// Intersection Observer for section animations
+let observer = null
+
+onMounted(() => {
+  const options = {
+    root: null,
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px',
+  }
+
+  observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+      }
+    })
+  }, options)
+
+  // Observe all sections except newsletter
+  const sections = document.querySelectorAll('section:not(.newsletter)')
+  sections.forEach(section => {
+    observer.observe(section)
+  })
+})
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect()
+  }
+})
 </script>
 
 <style scoped>
@@ -919,9 +949,9 @@ const subscribeNewsletter = () => {
 
 .roadmap-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -930,15 +960,13 @@ const subscribeNewsletter = () => {
   border: 1px solid #2a2a2a;
   border-radius: 12px;
   padding: 30px;
-  transition: all 0.3s;
   position: relative;
   text-align: left;
 }
 
 .roadmap-card:hover {
-  transform: translateY(-4px);
   border-color: #3a3a3a;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
 }
 
 .roadmap-icon {
@@ -989,9 +1017,53 @@ const subscribeNewsletter = () => {
   border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
+/* Smooth Section Transitions */
+section:not(.newsletter) {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+section:not(.newsletter).visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation keyframes for fallback */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Newsletter section without animation for smooth scroll to footer */
+section.newsletter {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+/* Card hover effects with smooth transitions */
+.feature-card,
+.roadmap-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover,
+.roadmap-card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
 /* Newsletter Section */
 .newsletter {
-  padding: 80px 0;
+  padding: 60px 0;
   background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 100%);
   text-align: center;
 }
@@ -1002,16 +1074,16 @@ const subscribeNewsletter = () => {
 }
 
 .newsletter h2 {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: #e5e7eb;
 }
 
 .newsletter .subtitle {
-  font-size: 18px;
+  font-size: 16px;
   color: #9ca3af;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   line-height: 1.6;
 }
 

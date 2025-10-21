@@ -21,6 +21,7 @@ export default [
         alert: 'readonly',
         window: 'readonly',
         document: 'readonly',
+        IntersectionObserver: 'readonly',
       },
     },
     rules: {

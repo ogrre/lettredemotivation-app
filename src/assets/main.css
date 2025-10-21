@@ -14,14 +14,11 @@ body {
 }
 
 .home {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
+  overflow-y: auto;
 }
 
 section {
-  scroll-snap-align: start;
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -405,7 +402,7 @@ header {
 
 /* === FOOTER === */
 footer {
-  padding: 40px 0;
+  padding: 30px 0;
   border-top: 1px solid #1f1f1f;
   background: #0a0a0a;
 }
@@ -415,7 +412,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 24px;
 }
 
 .footer-left {
@@ -429,9 +426,7 @@ footer {
 
 .footer-links {
   display: flex;
-  gap: 8px;
-  flex-direction: column;
-  align-items: flex-start;
+  gap: 16px;
 }
 
 .footer-text,
@@ -522,10 +517,17 @@ footer a:hover {
   .step {
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
   .step-number {
     margin: 0 auto 20px;
+  }
+
+  .step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .privacy-features {
@@ -535,7 +537,7 @@ footer a:hover {
   .footer-content {
     flex-direction: column;
     text-align: center;
-    gap: 30px;
+    gap: 20px;
   }
 
   .footer-left,
@@ -545,8 +547,7 @@ footer a:hover {
   }
 
   .footer-links {
-    align-items: center;
-    gap: 15px;
+    justify-content: center;
   }
 }
 
