@@ -53,21 +53,45 @@
           </p>
 
           <h2>2. Données collectées</h2>
+
+          <h3>2.1 Extension et site web</h3>
           <p>
-            Nous ne collectons aucune donnée personnelle. L'extension Lettre de Motivation
-            fonctionne entièrement localement dans votre navigateur.
+            L'extension Lettre de Motivation fonctionne entièrement localement dans votre navigateur.
           </p>
           <ul>
-            <li><strong>Aucun compte utilisateur</strong> : Aucune inscription n'est requise</li>
-            <li>
-              <strong>Aucun tracking</strong> : Nous n'utilisons aucun outil d'analyse ou de suivi
-            </li>
-            <li><strong>Aucun cookie</strong> : Ce site n'utilise aucun cookie</li>
+            <li><strong>Aucun compte utilisateur</strong> : Aucune inscription n'est requise pour utiliser l'extension</li>
             <li>
               <strong>Stockage local uniquement</strong> : Vos données (clé API, CV, paramètres)
               sont stockées localement dans votre navigateur via l'API de stockage local du
               navigateur
             </li>
+          </ul>
+
+          <h3>2.2 Newsletter (optionnelle)</h3>
+          <p>
+            Si vous vous inscrivez à notre newsletter, nous collectons :
+          </p>
+          <ul>
+            <li><strong>Votre adresse email</strong> : Pour vous envoyer nos actualités</li>
+            <li><strong>Date d'inscription</strong> : Pour gérer votre abonnement</li>
+            <li><strong>Statistiques d'ouverture et de clic</strong> : Pour améliorer nos contenus</li>
+          </ul>
+          <p>
+            Base légale : Votre consentement (article 6.1.a du RGPD), que vous pouvez retirer à tout moment via le lien de désinscription présent dans chaque email.
+          </p>
+          <p>
+            Durée de conservation : Tant que vous êtes abonné. En cas de désinscription, vos données sont supprimées sous 30 jours maximum.
+          </p>
+
+          <h3>2.3 Statistiques de visite</h3>
+          <p>
+            Nous utilisons Cloudflare Analytics pour mesurer l'audience de notre site. Ce service :
+          </p>
+          <ul>
+            <li>Ne collecte aucune donnée personnelle identifiable</li>
+            <li>N'utilise pas de cookies</li>
+            <li>Agrège uniquement des statistiques anonymes (pages vues, pays, navigateurs)</li>
+            <li>Est conforme au RGPD sans nécessiter de consentement préalable</li>
           </ul>
 
           <h2>3. Utilisation de l'API OpenAI</h2>
@@ -95,38 +119,103 @@
             <li>Supprimer l'extension si vous n'utilisez plus le service</li>
           </ul>
 
-          <h2>5. Hébergement</h2>
+          <h2>5. Sous-traitants et partenaires</h2>
+
+          <h3>5.1 Hébergement</h3>
           <p>
-            Ce site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723,
+            Ce site est hébergé par <strong>Vercel Inc.</strong>, 440 N Barranca Ave #4133, Covina, CA 91723,
             États-Unis.
           </p>
 
-          <h2>6. Vos droits</h2>
-          <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+          <h3>5.2 Gestion de la newsletter</h3>
+          <p>
+            Les emails de la newsletter sont gérés par <strong>Brevo</strong> (ex-Sendinblue),
+            7 rue de Madrid, 75008 Paris, France.
+          </p>
           <ul>
-            <li>Droit d'accès à vos données personnelles</li>
-            <li>Droit de rectification</li>
-            <li>Droit à l'effacement</li>
-            <li>Droit à la portabilité</li>
+            <li>Serveurs situés en France et dans l'Union Européenne</li>
+            <li>Certifié ISO 27001 pour la sécurité des données</li>
+            <li>Conforme RGPD</li>
+          </ul>
+
+          <h3>5.3 Protection et statistiques</h3>
+          <p>
+            Nous utilisons <strong>Cloudflare</strong> pour la protection et les statistiques du site.
+          </p>
+          <ul>
+            <li>Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, États-Unis</li>
+            <li>Certifié EU-U.S. Data Privacy Framework</li>
+            <li>Analytics sans cookies ni données personnelles</li>
+          </ul>
+
+          <h2>6. Transferts de données hors Union Européenne</h2>
+          <p>
+            Certains de nos partenaires sont situés aux États-Unis. Vos données peuvent être transférées vers ces pays dans les cas suivants :
+          </p>
+          <ul>
+            <li>
+              <strong>OpenAI</strong> : Lorsque vous utilisez l'extension, vos prompts et CV sont envoyés à OpenAI (États-Unis).
+              OpenAI a adhéré au EU-U.S. Data Privacy Framework.
+            </li>
+            <li>
+              <strong>Cloudflare</strong> : Les données de navigation anonymisées transitent par Cloudflare (États-Unis),
+              également certifié EU-U.S. Data Privacy Framework.
+            </li>
+            <li>
+              <strong>Vercel</strong> : L'hébergement du site est assuré par Vercel (États-Unis).
+            </li>
           </ul>
           <p>
-            Cependant, comme nous ne collectons aucune donnée personnelle, ces droits ne
-            s'appliquent pas dans notre cas. Toutes vos données sont stockées localement sur votre
-            appareil et vous en avez le contrôle total.
+            Ces transferts sont encadrés par des garanties appropriées (clauses contractuelles types de la Commission Européenne,
+            certifications Data Privacy Framework).
           </p>
 
-          <h2>7. Contact</h2>
+          <h2>7. Vos droits</h2>
+          <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+          <ul>
+            <li><strong>Droit d'accès</strong> : Obtenir la confirmation que vos données sont traitées et en obtenir une copie</li>
+            <li><strong>Droit de rectification</strong> : Corriger vos données inexactes ou incomplètes</li>
+            <li><strong>Droit à l'effacement</strong> : Supprimer vos données dans certains cas</li>
+            <li><strong>Droit à la portabilité</strong> : Récupérer vos données dans un format structuré</li>
+            <li><strong>Droit d'opposition</strong> : Vous opposer au traitement de vos données</li>
+            <li><strong>Droit de retrait du consentement</strong> : Retirer votre consentement à tout moment (newsletter)</li>
+            <li><strong>Droit de réclamation</strong> : Introduire une réclamation auprès de la CNIL (www.cnil.fr)</li>
+          </ul>
           <p>
-            Pour toute question concernant cette politique de confidentialité, vous pouvez nous
-            contacter à :<br />
-            <a href="mailto:contact@betta.black">contact@betta.black</a>
+            Pour exercer ces droits concernant la newsletter, contactez-nous à
+            <a href="mailto:support@lettredemotivation.app">support@lettredemotivation.app</a> ou utilisez le lien de désinscription dans nos emails.
+          </p>
+          <p>
+            <strong>Note</strong> : Pour les données de l'extension (clé API, CV, paramètres), elles sont stockées localement
+            sur votre appareil et vous en avez le contrôle total via les paramètres de votre navigateur.
           </p>
 
-          <h2>8. Modifications</h2>
+          <h2>8. Cookies</h2>
+          <p>
+            Ce site n'utilise aucun cookie publicitaire ou de tracking. Cloudflare Analytics fonctionne sans cookies
+            conformément au RGPD.
+          </p>
+
+          <h2>9. Contact et réclamations</h2>
+          <p>
+            Pour toute question concernant cette politique de confidentialité ou pour exercer vos droits, vous pouvez nous
+            contacter à :<br />
+            <a href="mailto:support@lettredemotivation.app">support@lettredemotivation.app</a>
+          </p>
+          <p>
+            Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la
+            <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) :
+          </p>
+          <ul>
+            <li>En ligne : <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">www.cnil.fr/fr/plaintes</a></li>
+            <li>Par courrier : CNIL - 3 Place de Fontenoy - TSA 80715 - 75334 PARIS CEDEX 07</li>
+          </ul>
+
+          <h2>10. Modifications</h2>
           <p>
             Nous nous réservons le droit de modifier cette politique de confidentialité à tout
-            moment. Les modifications seront publiées sur cette page avec une nouvelle date de mise
-            à jour.
+            moment. Les modifications importantes vous seront notifiées par email si vous êtes abonné à la newsletter.
+            Les modifications seront publiées sur cette page avec une nouvelle date de mise à jour.
           </p>
         </div>
 
@@ -137,22 +226,48 @@
           <p>
             The lettredemotivation.app website is published by Black Betta, an individual domiciled
             in France, in Lille.<br />
-            Contact: <a href="mailto:contact@betta.black">contact@betta.black</a>
+            Contact: <a href="mailto:support@lettredemotivation.app">support@lettredemotivation.app</a>
           </p>
 
           <h2>2. Data Collection</h2>
+
+          <h3>2.1 Extension and website</h3>
           <p>
-            We do not collect any personal data. The Lettre de Motivation extension works entirely
-            locally in your browser.
+            The Lettre de Motivation extension works entirely locally in your browser.
           </p>
           <ul>
-            <li><strong>No user account</strong>: No registration is required</li>
-            <li><strong>No tracking</strong>: We do not use any analytics or tracking tools</li>
-            <li><strong>No cookies</strong>: This site does not use any cookies</li>
+            <li><strong>No user account</strong>: No registration is required to use the extension</li>
             <li>
               <strong>Local storage only</strong>: Your data (API key, CV, settings) is stored
               locally in your browser via the browser's local storage API
             </li>
+          </ul>
+
+          <h3>2.2 Newsletter (optional)</h3>
+          <p>
+            If you subscribe to our newsletter, we collect:
+          </p>
+          <ul>
+            <li><strong>Your email address</strong>: To send you our updates</li>
+            <li><strong>Subscription date</strong>: To manage your subscription</li>
+            <li><strong>Open and click statistics</strong>: To improve our content</li>
+          </ul>
+          <p>
+            Legal basis: Your consent (Article 6.1.a GDPR), which you can withdraw at any time via the unsubscribe link in each email.
+          </p>
+          <p>
+            Retention period: As long as you are subscribed. Upon unsubscription, your data is deleted within 30 days.
+          </p>
+
+          <h3>2.3 Website statistics</h3>
+          <p>
+            We use Cloudflare Analytics to measure our website traffic. This service:
+          </p>
+          <ul>
+            <li>Does not collect any personally identifiable data</li>
+            <li>Does not use cookies</li>
+            <li>Only aggregates anonymous statistics (page views, countries, browsers)</li>
+            <li>Is GDPR compliant without requiring prior consent</li>
           </ul>
 
           <h2>3. OpenAI API Usage</h2>
@@ -174,34 +289,102 @@
             <li>Uninstall the extension if you no longer use the service</li>
           </ul>
 
-          <h2>5. Hosting</h2>
+          <h2>5. Sub-processors and partners</h2>
+
+          <h3>5.1 Hosting</h3>
           <p>
-            This site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, United
+            This site is hosted by <strong>Vercel Inc.</strong>, 440 N Barranca Ave #4133, Covina, CA 91723, United
             States.
           </p>
 
-          <h2>6. Your Rights</h2>
-          <p>Under GDPR, you have the following rights:</p>
+          <h3>5.2 Newsletter management</h3>
+          <p>
+            Newsletter emails are managed by <strong>Brevo</strong> (formerly Sendinblue),
+            7 rue de Madrid, 75008 Paris, France.
+          </p>
           <ul>
-            <li>Right to access your personal data</li>
-            <li>Right to rectification</li>
-            <li>Right to erasure</li>
-            <li>Right to data portability</li>
+            <li>Servers located in France and the European Union</li>
+            <li>ISO 27001 certified for data security</li>
+            <li>GDPR compliant</li>
+          </ul>
+
+          <h3>5.3 Protection and analytics</h3>
+          <p>
+            We use <strong>Cloudflare</strong> for website protection and analytics.
+          </p>
+          <ul>
+            <li>Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, United States</li>
+            <li>EU-U.S. Data Privacy Framework certified</li>
+            <li>Cookie-free and privacy-friendly analytics</li>
+          </ul>
+
+          <h2>6. International data transfers</h2>
+          <p>
+            Some of our partners are located in the United States. Your data may be transferred to these countries in the following cases:
+          </p>
+          <ul>
+            <li>
+              <strong>OpenAI</strong>: When you use the extension, your prompts and CV are sent to OpenAI (United States).
+              OpenAI has adhered to the EU-U.S. Data Privacy Framework.
+            </li>
+            <li>
+              <strong>Cloudflare</strong>: Anonymized browsing data transits through Cloudflare (United States),
+              also certified EU-U.S. Data Privacy Framework.
+            </li>
+            <li>
+              <strong>Vercel</strong>: Website hosting is provided by Vercel (United States).
+            </li>
           </ul>
           <p>
-            However, since we do not collect any personal data, these rights do not apply in our
-            case. All your data is stored locally on your device and you have full control over it.
+            These transfers are governed by appropriate safeguards (European Commission standard contractual clauses,
+            Data Privacy Framework certifications).
           </p>
 
-          <h2>7. Contact</h2>
+          <h2>7. Your Rights</h2>
+          <p>Under GDPR, you have the following rights:</p>
+          <ul>
+            <li><strong>Right of access</strong>: Obtain confirmation that your data is being processed and get a copy</li>
+            <li><strong>Right to rectification</strong>: Correct inaccurate or incomplete data</li>
+            <li><strong>Right to erasure</strong>: Delete your data in certain cases</li>
+            <li><strong>Right to data portability</strong>: Retrieve your data in a structured format</li>
+            <li><strong>Right to object</strong>: Object to the processing of your data</li>
+            <li><strong>Right to withdraw consent</strong>: Withdraw your consent at any time (newsletter)</li>
+            <li><strong>Right to lodge a complaint</strong>: File a complaint with the CNIL (www.cnil.fr)</li>
+          </ul>
           <p>
-            For any questions regarding this privacy policy, you can contact us at:<br />
-            <a href="mailto:contact@betta.black">contact@betta.black</a>
+            To exercise these rights regarding the newsletter, contact us at
+            <a href="mailto:support@lettredemotivation.app">support@lettredemotivation.app</a> or use the unsubscribe link in our emails.
+          </p>
+          <p>
+            <strong>Note</strong>: For extension data (API key, CV, settings), they are stored locally
+            on your device and you have full control via your browser settings.
           </p>
 
-          <h2>8. Changes</h2>
+          <h2>8. Cookies</h2>
           <p>
-            We reserve the right to modify this privacy policy at any time. Changes will be posted
+            This site does not use any advertising or tracking cookies. Cloudflare Analytics works without cookies
+            in compliance with GDPR.
+          </p>
+
+          <h2>9. Contact and complaints</h2>
+          <p>
+            For any questions regarding this privacy policy or to exercise your rights, you can
+            contact us at:<br />
+            <a href="mailto:support@lettredemotivation.app">support@lettredemotivation.app</a>
+          </p>
+          <p>
+            If you believe your rights are not being respected, you can file a complaint with the
+            <strong>CNIL</strong> (French Data Protection Authority):
+          </p>
+          <ul>
+            <li>Online: <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">www.cnil.fr/fr/plaintes</a></li>
+            <li>By mail: CNIL - 3 Place de Fontenoy - TSA 80715 - 75334 PARIS CEDEX 07, France</li>
+          </ul>
+
+          <h2>10. Changes</h2>
+          <p>
+            We reserve the right to modify this privacy policy at any time. Significant changes will be notified
+            by email if you are subscribed to the newsletter. Changes will be posted
             on this page with a new update date.
           </p>
         </div>
@@ -283,6 +466,14 @@ const switchLanguage = lang => {
   color: #e5e7eb;
   margin-top: 40px;
   margin-bottom: 16px;
+}
+
+.content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #d1d5db;
+  margin-top: 24px;
+  margin-bottom: 12px;
 }
 
 .content p {

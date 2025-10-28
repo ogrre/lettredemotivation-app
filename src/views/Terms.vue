@@ -51,14 +51,14 @@
             <strong>Black Betta</strong><br />
             Particulier<br />
             Domicilié à Lille, France<br />
-            Email : <a href="mailto:contact@betta.black">contact@betta.black</a><br />
+            Email : <a href="mailto:support@lettredemotivation.app">support@lettredemotivation.app</a><br />
             Site web : <a href="https://betta.black" target="_blank">https://betta.black</a>
           </p>
 
           <h2>2. Directeur de publication</h2>
           <p>
             Le directeur de la publication est Black Betta.<br />
-            Contact : <a href="mailto:contact@betta.black">contact@betta.black</a>
+            Contact : <a href="mailto:support@lettredemotivation.app">support@lettredemotivation.app</a>
           </p>
 
           <h2>3. Hébergement</h2>
@@ -152,7 +152,7 @@
           <h2>11. Contact</h2>
           <p>
             Pour toute question concernant ces mentions légales, vous pouvez nous contacter à :<br />
-            <a href="mailto:contact@betta.black">contact@betta.black</a>
+            <a href="mailto:support@lettredemotivation.app">support@lettredemotivation.app</a>
           </p>
         </div>
 
@@ -165,14 +165,14 @@
             <strong>Black Betta</strong><br />
             Individual<br />
             Domiciled in Lille, France<br />
-            Email: <a href="mailto:contact@betta.black">contact@betta.black</a><br />
+            Email: <a href="mailto:support@lettredemotivation.app">support@lettredemotivation.app</a><br />
             Website: <a href="https://betta.black" target="_blank">https://betta.black</a>
           </p>
 
           <h2>2. Publication Director</h2>
           <p>
             The publication director is Black Betta.<br />
-            Contact: <a href="mailto:contact@betta.black">contact@betta.black</a>
+            Contact: <a href="mailto:support@lettredemotivation.app">support@lettredemotivation.app</a>
           </p>
 
           <h2>3. Hosting</h2>
@@ -263,7 +263,7 @@
           <h2>11. Contact</h2>
           <p>
             For any questions regarding these terms of service, you can contact us at:<br />
-            <a href="mailto:contact@betta.black">contact@betta.black</a>
+            <a href="mailto:support@lettredemotivation.app">support@lettredemotivation.app</a>
           </p>
         </div>
       </div>
