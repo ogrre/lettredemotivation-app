@@ -71,7 +71,7 @@
         </p>
         <div class="cta-buttons">
           <a
-            href="https://chrome.google.com/webstore"
+            href="https://chromewebstore.google.com/detail/lettre-de-motivation/dcopgcgecodhonbgmbiceieglcikjgli?authuser=0&hl=fr"
             class="btn btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -107,7 +107,7 @@
             <span>{{ locale === 'fr' ? 'Installer sur Chrome' : 'Install on Chrome' }}</span>
           </a>
           <a
-            href="https://addons.mozilla.org/firefox/"
+            href="https://addons.mozilla.org/fr/firefox/addon/lettre-de-motivation/"
             class="btn btn-secondary"
             target="_blank"
             rel="noopener noreferrer"
