@@ -1,155 +1,92 @@
-# 📝 Lettre de Motivation
+# Lettre de Motivation — Website
 
-Landing page and website for the **Lettre de Motivation** browser extension - An AI-powered tool to generate personalized cover letters using OpenAI's API.
+The public website for [Lettre de Motivation](https://lettredemotivation.app), an open-source browser extension that helps people write tailored cover letters with AI.
 
-🌐 **Live**: [lettredemotivation.app](https://lettredemotivation.app)
+## What this project does
 
-## ✨ Features
+This repository contains the presentation website, not the letter-generation engine. Its purpose is to:
 
-- 🌍 Multilingual support (French & English)
-- 📧 Newsletter subscription (powered by Brevo)
-- 📊 Privacy-friendly analytics (Cloudflare Analytics)
-- 🎨 Modern, responsive design
-- ⚡ Fast and lightweight
-- 🔒 GDPR compliant
+- explain what the extension does and how it works;
+- provide installation links for Chrome and Firefox;
+- document the project's privacy approach;
+- provide the legal pages and links to the source code.
 
-## 🛠️ Tech Stack
+The extension itself lives in the companion repository:
+[github.com/ogrre/lettredemotivation-ext](https://github.com/ogrre/lettredemotivation-ext).
 
-- **Framework**: Vue.js 3 (Composition API)
-- **Routing**: Vue Router
-- **Internationalization**: Vue I18n
-- **Build Tool**: Vite
-- **Hosting**: Vercel
-- **Analytics**: Cloudflare Analytics
-- **Newsletter**: Brevo (ex-Sendinblue)
+## Features
 
-## 🚀 Development
+- French and English interface;
+- responsive landing page with an extension preview;
+- interactive FAQ;
+- privacy and terms pages;
+- direct links to the Chrome Web Store, Firefox Add-ons and GitHub;
+- no account or backend required by the website.
 
-### Prerequisites
+## Tech stack
 
-- Node.js 18+
-- npm or yarn
+- [Vue 3](https://vuejs.org/) with the Composition API;
+- [Vue Router](https://router.vuejs.org/);
+- [Vue I18n](https://vue-i18n.intlify.dev/);
+- [Vite](https://vite.dev/);
+- plain CSS with no UI framework;
+- [Vitest](https://vitest.dev/) for tests.
 
-### Installation
+## Local development
+
+Requirements: Node.js 22 or newer and npm.
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/lettredemotivation-app.git
+git clone https://github.com/ogrre/lettredemotivation-app.git
 cd lettredemotivation-app
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
 ```
 
-## 📁 Project Structure
+Useful commands:
 
+```bash
+npm run build       # Build the production bundle
+npm run preview     # Preview the production bundle locally
+npm run test:run    # Run the test suite once
+npm run lint        # Run ESLint
 ```
+
+## Routes
+
+- `/` — project homepage;
+- `/privacy` — privacy policy;
+- `/terms` — terms of service.
+
+## Project structure
+
+```text
 lettredemotivation-app/
-├── public/           # Static assets
+├── index.html
+├── icon.svg                 # Shared mint sparkle favicon
 ├── src/
-│   ├── assets/       # Images, fonts, styles
-│   ├── components/   # Vue components
-│   ├── locales/      # i18n translations (en.json, fr.json)
-│   ├── router/       # Vue Router configuration
-│   ├── views/        # Page components
-│   │   ├── Home.vue
-│   │   ├── Newsletter.vue
-│   │   ├── Privacy.vue
-│   │   └── Terms.vue
-│   ├── App.vue       # Root component
-│   └── main.js       # Application entry point
-├── vercel.json       # Vercel configuration
-└── package.json
+│   ├── assets/main.css      # Global design tokens
+│   ├── router/index.js
+│   ├── views/Home.vue
+│   ├── views/Privacy.vue
+│   ├── views/Terms.vue
+│   ├── App.vue
+│   └── main.js
+├── package.json
+└── vite.config.js
 ```
 
-## 🌐 Available Routes
+## Open-source contribution
 
-- `/` - Homepage
-- `/lettre` - Cover letter generator information
-- `/newsletter` - Newsletter subscription
-- `/privacy` - Privacy policy (GDPR compliant)
-- `/terms` - Terms of service
+Issues and pull requests are welcome. Before opening a pull request:
 
-## 🔧 Configuration
+1. create a focused branch from `main`;
+2. keep commits small and describe them in English;
+3. run `npm run build`, `npm run test:run` and `npm run lint`;
+4. explain the user-facing impact in the pull request.
 
-### Environment Variables
+## License
 
-This project doesn't require environment variables for the frontend. All configurations are handled through:
+This project is released under the [MIT License](LICENSE).
 
-- **Cloudflare**: Analytics and DNS
-- **Vercel**: Deployment and hosting
-- **Brevo**: Newsletter management
-
-### Vercel Configuration
-
-The `vercel.json` file ensures proper routing for the SPA:
-
-```json
-{
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
-```
-
-## 📦 Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Lint code (if configured)
-
-## 🔒 Privacy & Compliance
-
-This website is fully **GDPR compliant** with:
-
-- ✅ Transparent data collection practices
-- ✅ Cookie-free analytics (Cloudflare)
-- ✅ Clear privacy policy
-- ✅ User consent for newsletter
-- ✅ Right to access, rectify, and delete data
-- ✅ International data transfer safeguards
-
-For more details, see our [Privacy Policy](https://lettredemotivation.app/privacy).
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feat/amazing-feature`)
-3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
-4. Push to the branch (`git push origin feat/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👤 Author
-
-**Black Betta**
-
-- Website: [betta.black](https://betta.black)
-- Support: support@lettredemotivation.app
-
-## 🙏 Acknowledgments
-
-- [OpenAI](https://openai.com) - AI-powered cover letter generation
-- [Vue.js](https://vuejs.org) - Progressive JavaScript framework
-- [Vercel](https://vercel.com) - Hosting and deployment
-- [Cloudflare](https://cloudflare.com) - Analytics and CDN
-- [Brevo](https://brevo.com) - Email marketing platform
-
----
-
-Made with ❤️ by [Black Betta](https://betta.black)
+Maintained by [Black Betta](https://betta.black).

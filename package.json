@@ -1,6 +1,6 @@
 {
   "name": "lettredemotivation-app",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Landing page for the Lettre de Motivation browser extension",
   "type": "module",
   "scripts": {
